@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '1.2.4'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'net.java.dev.msv:msv-core:2013.6.1'
+    compile 'com.thaiopensource:jing:20091111'
+    compile 'com.thaiopensource:trang:20091111'
+    testCompile 'junit:junit:4.12'
+}
+
+shadowJar {
+    manifest {
+        attributes "Main-Class": "schemaconv.Main"
+    }
+}
